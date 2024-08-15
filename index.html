@@ -2,6 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+
     <script type="text/javascript" src="dependencies.js"></script>
     <script type="text/javascript" src="rutoken-plugin.js"></script>
     <script type="text/javascript" src="libs/jquery/1.7.1/jquery.min.js"></script>
@@ -17,6 +18,7 @@
 
     <script type="text/javascript" src="present.js"></script>
     <script type="text/javascript" src="asn1Utils.js"></script>
+
     <title>Рутокен Расширение</title>
     <style>
         body {
@@ -28,17 +30,22 @@
             width: 100%;
             padding: 10px;
             margin-top: 10px;
-            background-color: #971717;
+
+            background-color: #971717;  
+
             color: white;
             border: none;
             cursor: pointer;
         }
         button:hover {
+
             background-color: #971717;
+
         }
     </style>
 </head>
 <body>
+
     <div id="content">
         <div class="common">
             <dl>
@@ -79,3 +86,15 @@
     <!-- <script src="extension.js"></script> -->
 </body>
 </html>
+
+    <div id="extension-content">
+        <h2>Рутокен Расширение</h2>
+        <button id="loginButton">Войти</button>
+        <button id="logoutButton">Выйти</button>
+        <button id="writeBinaryButton">Записать бинарный файл</button>
+        <div id="status"></div>
+    </div>
+    <script src="extension.js"></script>
+</body>
+</html>
+
