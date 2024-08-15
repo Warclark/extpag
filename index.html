@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="dependencies.js"></script>
+    <script type="text/javascript" src="rutoken-plugin.js"></script>
+    <script type="text/javascript" src="libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="libs/jquery/1.7.1/jquery-base64.min.js"></script>
+
+    <script type="text/javascript" src="libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+
+    <script type="text/javascript" src="libs/syntaxhighligher/3.0.83/js/shCore.js"></script>
+    <script type="text/javascript" src="libs/syntaxhighligher/3.0.83/js/shBrushJScript.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="libs/syntaxhighligher/3.0.83/css/shCore.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script type="text/javascript" src="present.js"></script>
+    <script type="text/javascript" src="asn1Utils.js"></script>
+    <title>Рутокен Расширение</title>
+    <style>
+        body {
+            width: 300px;
+            padding: 10px;
+            font-family: Arial, sans-serif;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #971717;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #971717;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <div class="common">
+            <dl>
+                <dt><label for="device-list">Доступные устройства:</label></dt>
+                <dd>
+                    <select id="device-list">
+                        <option>Обновите список устройств</option>
+                    </select>
+                    <button id="refresh-dev">↓↑</button>
+                </dd>
+            </dl><dl>
+                <dt><label for="device-list">PIN-код:</label></dt>
+                <dd>
+                    <input    id="device-pin" type="text"    value="12345678" />
+                    <button id="login">Войти</button>
+                    <button id="logout">Выйти</button>
+                    <button id="save-pin">Сохранить PIN-код</button>
+                    <button id="remove-pin">Удалить PIN-код</button>
+                </dd>
+            </dl><dl>
+                <dt><label for="key-list">Ключи на устройстве: </label></dt>
+                <dd>
+                    <select id="key-list">
+                        <option>Выполните вход на устройство</option>
+                    </select>
+                    <button id="refresh-keys">↓↑</button>
+                </dd>
+            </dl><dl>
+                <dt><label for="cert-list">Сертификаты на уcтройстве: </label></dt>
+                <dd>
+                    <select id="cert-list">
+                        <option>Обновите список сертификатов</option>
+                    </select>
+                    <button id="refresh-certs">↓↑</button>
+                </dd>
+            </dl>
+        </div>
+    <!-- <script src="extension.js"></script> -->
+</body>
+</html>
