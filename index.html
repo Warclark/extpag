@@ -23,8 +23,6 @@
 
     </head>
     <body>
-
-
         <div id="content">
             <div class="common">
                 <dl>
@@ -53,44 +51,8 @@
                             <button id="refresh-keys">↓↑</button>
                         </dd>
                     </dl>
-                </div>                    
-        <div id="section-6">
-                    <div class="common">
-                        <dl>
-                            <dt><label for="files-list">Бинарные файлы на устройстве: </label></dt>
-                            <dd>
-                                <select id="files-list">
-                                    <option>Обновите список файлов</option>
-                                </select>
-                                <button id="refresh-files">↓↑</button>
-                            </dd>
-                        </dl>
-                    </div>
-                    <div id="CreateFile" class="group">
-                        <ul>
-                            <li>
-                                <label><input type="checkbox" name="is-private-file" />Защитить бинарный файл на PIN-код Пользователя</label><br>
-                            </li>
-                                <li>
-                                <label>Задайте имя бинарного файла:</label>
-                                <input type="text" class="file-id input" value='File_name' />
-                            </li>
-                            <li>
-                                <label>Задайте содержимое бинарного файла в формате Base64:</label>
-                                <textarea id="create-file-body" class="text-input" rows="7">RmlsZV9uYW1l</textarea>
-                            </li>
-                        </ul>
-                    </div>
-                    <div id="GetFile" class="group">
-                        <ul>
-                            <li><textarea id="get-file-result" class="text-output" rows="7"></textarea></li>
-                        </ul>
-                    </div>
-                    <div id="DeleteFile" class="group"></div>
-                </div>
             </div>
-        </div>
-
+        </div>                    
     </body>
 </html>
 <!-- vim: tabstop=4:softtabstop=4:shiftwidth=4:expandtab
