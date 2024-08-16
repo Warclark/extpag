@@ -633,57 +633,6 @@ IPx1wd5hBhGV714=
                         </div>
                     </div>
                     <div id="section-5">
-                        <div id="EncryptMessage" class="group">
-                            <ul id="EncryptMessageUl">
-                                <li>
-                                    <table id="Recipients" class="inlineblock">
-                                        <tr>
-                                            <th colspan="2">Получатели</th>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="2">
-                                                <label for="encrypt-certificate">Тело сертификата</label>
-                                                <textarea id="encrypt-certificate" class="recipient" rows="7">-----BEGIN CERTIFICATE-----&#10;MIIEWzCCBAqgAwIBAgIKfFP2xQACAALbSzAIBgYqhQMCAgMwZTEgMB4GCSqGSIb3DQEJARYRaW5mb0BjcnlwdG9wcm8ucnUxCzAJBgNVBAYTAlJVMRMwEQYDVQQKEwpDUllQVE8tUFJPMR8wHQYDVQQDExZUZXN0IENlbnRlciBDUllQVE8tUFJPMB4XDTEyMTAzMTEyMjIyNloXDTE0MTAwNDA3MDk0MVowggGDMQswCQYDVQQGEwJSVTEPMA0GA1UECBMGTW9zY293MQwwCgYDVQQHEwNtc2sxDzANBgNVBAkTBnN0cmVldDEOMAwGA1UEChMFQWt0aXYxCzAJBgNVBAsTAklUMRcwFQYDVQQQEw5wb3N0YWwgYWRkcmVzczEbMBkGA1UEDB4SBDQEPgQ7BDYEPQQ+BEEEQgRMMRkwFwYIKoUDA4EDAQESCzEyMzQ1Njc4OTg3MRYwFAYFKoUDZAMSCzEyMzQ1Njc4OTg3MRYwFAYFKoUDZAESCzEyMzQ1Njc4OTg3MRYwFAYFKoUDZAUSCzEyMzQ1Njc4OTg3MS8wLQYDVQQDHiYEJAQwBDwEOAQ7BDgETwAgBBgEPARPACAEHgRHBDUEQQRCBDIEPjESMBAGA1UEQRMJcHNldWRvbnltMRAwDgYDVQQEEwdzdXJuYW1lMRMwEQYDVQQqEwpnaXZlbiBuYW1lMSIwIAYJKoZIhvcNAQkBFhNleGFtcGxlQGV4YW1wbGUuY29tMGMwHAYGKoUDAgITMBIGByqFAwICIwEGByqFAwICHgEDQwAEQAhY4OcPvPJanf/8RhuIh3jt3MAOgtHwJSspvQwPi0SUNU4wILT1M9//WlAAz4hEXqx+9pGfyUiYsg/bgKwLsmWjggF4MIIBdDALBgNVHQ8EBAMCBsAwFgYDVR0lAQH/BAwwCgYIKwYBBQUHAwQwEwYDVR0gBAwwCjAIBgYqhQNkcQEwHQYDVR0OBBYEFOxa5YWf5fGZiFQew1lp0FyhfrogMB8GA1UdIwQYMBaAFG2PXgXZX6yRF5QelZoFMDg3ehAqMFUGA1UdHwROMEwwSqBIoEaGRGh0dHA6Ly93d3cuY3J5cHRvcHJvLnJ1L0NlcnRFbnJvbGwvVGVzdCUyMENlbnRlciUyMENSWVBUTy1QUk8oMikuY3JsMIGgBggrBgEFBQcBAQSBkzCBkDAzBggrBgEFBQcwAYYnaHR0cDovL3d3dy5jcnlwdG9wcm8ucnUvb2NzcG5jL29jc3Auc3JmMFkGCCsGAQUFBzAChk1odHRwOi8vd3d3LmNyeXB0b3Byby5ydS9DZXJ0RW5yb2xsL3BraS1zaXRlX1Rlc3QlMjBDZW50ZXIlMjBDUllQVE8tUFJPKDIpLmNydDAIBgYqhQMCAgMDQQAuWkeHdQran99h1XeLuepMQA9FIf4PwMzgwCi3bs4ThFQMvh5ZtSXY6aEJ1ohNxzvEAWN8elkoasoZJhWjj9zF&#10;-----END CERTIFICATE-----
-                                                </textarea>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="2"><button id="add-new-recipient" class="example">Добавить получателя</button></td>
-                                        </tr>
-                                    </table>
-                                </li>
-                                <li>
-                                    <label for="encrypt-message">Сообщение</label>
-                                    <textarea id="encrypt-message" class="text-input" rows="7">Зашифруй меня полностью</textarea>
-                                </li>
-                                <li>
-                                    <label><input type="checkbox" name="in-base64"/>Данные в base64</label><br>
-                                    <label><input type="checkbox" name="cms-encrypt-cipher" id="cms-encrypt-cipher"/>Алгоритм шифрования для RSA ключей</label>
-                                    <select class="cms-encrypt-alg" id="cms-encrypt-alg" disabled=true>
-                                        <option value="CIPHER_ALGORITHM_AES128">AES128</option>
-                                        <option value="CIPHER_ALGORITHM_AES192">AES192</option>
-                                        <option value="CIPHER_ALGORITHM_AES256">AES256</option>
-                                    <select>
-                                </li>
-                                <li>
-                                    <textarea id="encrypt-message-result" class="text-output" rows="7"></textarea>
-                                </li>
-                            </ul>
-                        </div>
-                        <div id="DecryptMessage" class="group">
-                            <ul>
-                                <li>
-                                    <label for="decrypt-message">Сообщение</label>
-                                    <textarea placeholder="Расшифруй меня полностью" id="decrypt-message" class="text-input" rows="7"></textarea>
-                                </li>
-                                <li>
-                                    <label><input type="checkbox" name="in-base64" />Получить результат в base64</label><br>
-                                </li>
-                                <li>
-                                    <textarea id="decrypt-message-result" class="text-output" rows="7"></textarea>
-                                </li>
-                            </ul>
-                        </div>
                     </div>
                     <div id="section-6">
                         <div class="common">
