@@ -23,20 +23,20 @@
 
     </head>
     <body>
-        <div id="container">
 
-            <div id="content">
-                <div class="common">
-                    <dl>
-                        <dt><label for="device-list">Доступные устройства:</label></dt>
-                        <dd>
-                            <select id="device-list">
-                                <option>Обновите список устройств</option>
-                            </select>
-                            <button id="refresh-dev">↓↑</button>
-                        </dd>
-                    </dl><dl>
-                        <dt><label for="device-list">PIN-код:</label></dt>
+
+        <div id="content">
+            <div class="common">
+                <dl>
+                    <dt><label for="device-list">Доступные устройства:</label></dt>
+                    <dd>
+                        <select id="device-list">
+                            <option>Обновите список устройств</option>
+                        </select>
+                        <button id="refresh-dev">↓↑</button>
+                    </dd>
+                </dl><dl>
+                    <dt><label for="device-list">PIN-код:</label></dt>
                         <dd>
                             <input    id="device-pin" type="text"    value="12345678" />
                             <button id="login">Войти</button>
@@ -54,7 +54,7 @@
                         </dd>
                     </dl>
                 </div>                    
-                <div id="section-6">
+        <div id="section-6">
                     <div class="common">
                         <dl>
                             <dt><label for="files-list">Бинарные файлы на устройстве: </label></dt>
@@ -66,31 +66,31 @@
                             </dd>
                         </dl>
                     </div>
-                        <div id="CreateFile" class="group">
-                            <ul>
+                    <div id="CreateFile" class="group">
+                        <ul>
+                            <li>
+                                <label><input type="checkbox" name="is-private-file" />Защитить бинарный файл на PIN-код Пользователя</label><br>
+                            </li>
                                 <li>
-                                    <label><input type="checkbox" name="is-private-file" />Защитить бинарный файл на PIN-код Пользователя</label><br>
-                                </li>
-                                <li>
-                                    <label>Задайте имя бинарного файла:</label>
-                                    <input type="text" class="file-id input" value='File_name' />
-                                </li>
-                                <li>
-                                    <label>Задайте содержимое бинарного файла в формате Base64:</label>
-                                    <textarea id="create-file-body" class="text-input" rows="7">RmlsZV9uYW1l</textarea>
-                                </li>
-                            </ul>
-                        </div>
-                        <div id="GetFile" class="group">
-                            <ul>
-                                <li><textarea id="get-file-result" class="text-output" rows="7"></textarea></li>
-                            </ul>
-                        </div>
-                        <div id="DeleteFile" class="group"></div>
+                                <label>Задайте имя бинарного файла:</label>
+                                <input type="text" class="file-id input" value='File_name' />
+                            </li>
+                            <li>
+                                <label>Задайте содержимое бинарного файла в формате Base64:</label>
+                                <textarea id="create-file-body" class="text-input" rows="7">RmlsZV9uYW1l</textarea>
+                            </li>
+                        </ul>
                     </div>
+                    <div id="GetFile" class="group">
+                        <ul>
+                            <li><textarea id="get-file-result" class="text-output" rows="7"></textarea></li>
+                        </ul>
+                    </div>
+                    <div id="DeleteFile" class="group"></div>
                 </div>
             </div>
         </div>
+
         <div class="dummy">
         <div id="bottom-bar-container">
         <div id="console-container">
