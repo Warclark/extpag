@@ -6,7 +6,7 @@ function testUi(useConsole) {
     this.useConsole = (useConsole === undefined) ? false : useConsole;
 
     var header = '<div class="group_header ui-widget-header ui-corner-all"></div>';
-    var codeBlock = '<div id="code"><button id="code-button" class="example button test-element">Показать код</button>' + '<div id="code-view"><pre class="brush: js"></pre></div></div>';
+    //var codeBlock = '<div id="code"><button id="code-button" class="example button test-element">Показать код</button>' + '<div id="code-view"><pre class="brush: js"></pre></div></div>';
     var runButton = '<button id="test-run" class="execute button test-element">Запустить тест</button>';
 
     $(".group").each(function (index) {
