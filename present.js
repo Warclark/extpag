@@ -1325,7 +1325,7 @@ var TestSuite = new(function () {
     })();
 
     this.ChangePin = new(function () {
-        Test.call(this);
+        
         this.description = function () {
             return "Смена PIN-кода пользователя";
         };
