@@ -15,7 +15,7 @@ function testUi(useConsole) {
         test.container = $(this);
         test.section = $(this).parent();
 
-        //$(this).html(header + codeBlock + $(this).html() + runButton);
+        $(this).html($(this).html() + runButton);
         $(this).find(".group_header").text(test.description);
 
         $(this).find("#code-view > pre").text(test.runTest.toString());
