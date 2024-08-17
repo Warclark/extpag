@@ -1660,72 +1660,72 @@ var TestSuite = new(function () {
         };
     })();
 
-    // this.SignMessage = new(function () {
-    //     Test.call(this);
-    //     this.description = function () {
-    //         return "Подпись сообщения";
-    //     };
+    this.SignMessage = new(function () {
+        Test.call(this);
+        this.description = function () {
+            return "Подпись сообщения";
+        };
 
-    //     this.runTest = function () {
-    //         var options = {};
+        this.runTest = function () {
+            var options = {};
 
-    //         ui.setContent(this.container, "");
-    //         options.addSignTime = ui.checkboxState(this.container, "add-sign-time") == "on" ? true : false;
-    //         options.useHardwareHash = ui.checkboxState(this.container, "use-hw-hash") == "on" ? true : false;
-    //         options.detached = ui.checkboxState(this.container, "detached-sign") == "on" ? true : false;
-    //         options.addUserCertificate = ui.checkboxState(this.container, "add-user-cert") == "on" ? true : false;
-    //         options.addSystemInfo = ui.checkboxState(this.container, "add-system-info") == "on" ? true : false;
-    //         options.addSecurityProductsInfo = ui.checkboxState(this.container, "add-security-products-info") == "on" ? true : false;
-    //         options.addEssCert = ui.checkboxState(this.container, "add-ess-cert") == "on" ? true : false;
-    //         options.CMS = ui.getContent(this.container, 1);
-    //         if (ui.checkboxState(this.container, "rsa-hash") == "on")
-    //             options.rsaHashAlgorithm = plugin[this.container.find(".cms-hash-alg").val()];
-    //         if (ui.checkboxState(this.container, "set-content-type") == "on")
-    //             options.eContentType = this.container.find("#content-type").val();
+            ui.setContent(this.container, "");
+            options.addSignTime = ui.checkboxState(this.container, "add-sign-time") == "on" ? true : false;
+            options.useHardwareHash = ui.checkboxState(this.container, "use-hw-hash") == "on" ? true : false;
+            options.detached = ui.checkboxState(this.container, "detached-sign") == "on" ? true : false;
+            options.addUserCertificate = ui.checkboxState(this.container, "add-user-cert") == "on" ? true : false;
+            options.addSystemInfo = ui.checkboxState(this.container, "add-system-info") == "on" ? true : false;
+            options.addSecurityProductsInfo = ui.checkboxState(this.container, "add-security-products-info") == "on" ? true : false;
+            options.addEssCert = ui.checkboxState(this.container, "add-ess-cert") == "on" ? true : false;
+            options.CMS = ui.getContent(this.container, 1);
+            if (ui.checkboxState(this.container, "rsa-hash") == "on")
+                options.rsaHashAlgorithm = plugin[this.container.find(".cms-hash-alg").val()];
+            if (ui.checkboxState(this.container, "set-content-type") == "on")
+                options.eContentType = this.container.find("#content-type").val();
 
-    //         var dataFormat = plugin[this.container.find(".data-format").val()];
+            var dataFormat = plugin[this.container.find(".data-format").val()];
 
-    //         if (ui.checkboxState(this.container, "add-ts-token") == "on") {
-    //             options.tspOptions = {};
-    //             options.tspOptions.url = this.container.find(".tsa-url").val();
-    //             options.tspOptions.digestAlg = plugin[this.container.find(".ts-hash-alg").val()];
-    //             options.tspOptions.cert = ui.checkboxState(this.container, "tsa-cert-req") === "on" ? true : false;
-    //             options.tspOptions.nonce = ui.checkboxState(this.container, "nonce") === "on" ? true : false;
-    //             const policy = this.container.find(".set-policy").val();
-    //             if (policy.length)
-    //                 options.tspOptions.policy = policy;
+            if (ui.checkboxState(this.container, "add-ts-token") == "on") {
+                options.tspOptions = {};
+                options.tspOptions.url = this.container.find(".tsa-url").val();
+                options.tspOptions.digestAlg = plugin[this.container.find(".ts-hash-alg").val()];
+                options.tspOptions.cert = ui.checkboxState(this.container, "tsa-cert-req") === "on" ? true : false;
+                options.tspOptions.nonce = ui.checkboxState(this.container, "nonce") === "on" ? true : false;
+                const policy = this.container.find(".set-policy").val();
+                if (policy.length)
+                    options.tspOptions.policy = policy;
 
-    //             options.tspOptions.extOid = this.container.find(".ext-oid").val();
-    //             options.tspOptions.extValue = this.container.find(".ext-value").val();
-    //             options.tspOptions.extCrit = ui.checkboxState(this.container, "ext-crit") === "on" ? true : false;
+                options.tspOptions.extOid = this.container.find(".ext-oid").val();
+                options.tspOptions.extValue = this.container.find(".ext-value").val();
+                options.tspOptions.extCrit = ui.checkboxState(this.container, "ext-crit") === "on" ? true : false;
 
-    //             options.tspOptions.verifyTsToken = ui.checkboxState(this.container, "verify-ts-token") === "on" ? true : false;
+                options.tspOptions.verifyTsToken = ui.checkboxState(this.container, "verify-ts-token") === "on" ? true : false;
 
-    //             var caCert = this.container.find(".ca-input").val();
-    //             if (caCert) {
-    //                 options.tspOptions.CA = new Array();
-    //                 options.tspOptions.CA.push(caCert);
-    //             }
+                var caCert = this.container.find(".ca-input").val();
+                if (caCert) {
+                    options.tspOptions.CA = new Array();
+                    options.tspOptions.CA.push(caCert);
+                }
 
-    //             options.tspOptions.certificates = ui.getArray( this.container, ".verify-ts-signer");
-    //         }
+                options.tspOptions.certificates = ui.getArray( this.container, ".verify-ts-signer");
+            }
 
-    //         if (ui.useConsole) {
-    //             console.time("sign");
-    //             console.log("HW", options.useHardwareHash);
-    //             console.log("detached: ", options.detached);
-    //             console.log("system-info: ", options.addSystemInfo);
-    //             console.log("dataFormat: ", dataFormat);
-    //         }
-    //         plugin.pluginObject.sign(ui.device(), ui.certificate(), ui.getContent(this.container), dataFormat, options).then($.proxy(function (res) {
-    //             if (ui.useConsole) {
-    //                 console.timeEnd("sign");
-    //             }
-    //             ui.setContent(this.container, res);
-    //             ui.printResult(res);
-    //         }, this), $.proxy(ui.printError, ui));
-    //     }
-    // });
+            if (ui.useConsole) {
+                console.time("sign");
+                console.log("HW", options.useHardwareHash);
+                console.log("detached: ", options.detached);
+                console.log("system-info: ", options.addSystemInfo);
+                console.log("dataFormat: ", dataFormat);
+            }
+            plugin.pluginObject.sign(ui.device(), ui.certificate(), ui.getContent(this.container), dataFormat, options).then($.proxy(function (res) {
+                if (ui.useConsole) {
+                    console.timeEnd("sign");
+                }
+                ui.setContent(this.container, res);
+                ui.printResult(res);
+            }, this), $.proxy(ui.printError, ui));
+        }
+    });
 
     this.CmcRequest = new(function () {
         Test.call(this);
