@@ -15,7 +15,7 @@ function testUi(useConsole) {
         test.container = $(this);
         test.section = $(this).parent();
 
-        $(this).html(header + codeBlock + $(this).html() + runButton);
+        //$(this).html(header + codeBlock + $(this).html() + runButton);
         $(this).find(".group_header").text(test.description);
 
         $(this).find("#code-view > pre").text(test.runTest.toString());
@@ -1325,7 +1325,7 @@ var TestSuite = new(function () {
     })();
 
     this.ChangePin = new(function () {
-        
+        Test.call(this);
         this.description = function () {
             return "Смена PIN-кода пользователя";
         };
