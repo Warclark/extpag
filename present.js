@@ -2211,11 +2211,11 @@ function getErrorCode(error) {
 }
 
 function showError(reason) {
-    $("#content").css("display", "none");
-    $("#console-container").css("border", "none");
-    $("#bottom-bar-container").css("top", "0%");
-    ui.writeln(reason);
-    console.log(reason);
+    //$("#content").css("display", "none");
+    //$("#console-container").css("border", "none");
+    //$("#bottom-bar-container").css("top", "0%");
+    //ui.writeln(reason);
+    //console.log(reason);
 }
 
 function getFFMajor() {
