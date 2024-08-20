@@ -478,10 +478,11 @@ testUi.prototype = {
                 if (loginAttempts < maxLoginAttempts & logined === false) {
                     loginAttempts++;
                     var remainingAttempts = maxLoginAttempts - loginAttempts;
-                    this.writeln(error.toString(), + " Осталось попыток: " + remainingAttempts);
+                    this.writeln(error.toString()); 
+                    console.log(" Осталось попыток: " + remainingAttempts);
 
                     if (remainingAttempts === 0 & logined === false) {
-                        this.writeln("Превышено максимальное количество попыток. Вход заблокирован.");
+                        console.log("Превышено максимальное количество попыток. Вход заблокирован.");
                         this.controls.loginButton.prop('disabled', true);
                     }
 
