@@ -478,12 +478,12 @@ testUi.prototype = {
                         $.proxy(function() {
                             // Успешный вход
                             loginAttempts = 0; // Сбрасываем счетчик при успешном входе
-                            //this.writeln("Вход выполнен успешно");
+                            this.writeln("Вход выполнен успешно");
                         }, this),
                         $.proxy(function(error) {
                             // Ошибка входа
-                            this.writeln(error.toString() + "Осталось попыток: " + remainingAttempts);
                             
+                            this.writeln("Осталось попыток: " + remainingAttempts);
                             
                             if (remainingAttempts === 0) {
                                 this.writeln("Превышено максимальное количество попыток. Вход заблокирован.");
