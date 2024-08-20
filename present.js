@@ -495,7 +495,7 @@ testUi.prototype = {
                     this.writeln("Превышено максимальное количество попыток. Вход заблокирован.");
                 }
             } catch (error) {
-                this.writeln(error.toString());
+                this.writeln(error.toString() + "Осталось попыток: " + remainingAttempts);
             }
         }, this));
 
