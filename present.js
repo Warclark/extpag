@@ -465,33 +465,11 @@ testUi.prototype = {
             }
         }, this));
 
-        var maxLoginAttempts = 3; // Максимальное количество попыток
-        var loginAttempts = 0; // Текущее количество попыток
-        
         this.controls.loginButton.click($.proxy(function () {
             try {
-                if (loginAttempts < maxLoginAttempts) {
-                    loginAttempts++;
-                    var remainingAttempts = maxLoginAttempts - loginAttempts;
-                    
-                    plugin.login().then(
-
-                        $.proxy(function(error) {
-                            // Ошибка входа
-                            this.writeln(error.toString() + "Осталось попыток: " + remainingAttempts);
-                            
-                            
-                            if (remainingAttempts === 0) {
-                                this.writeln("Превышено максимальное количество попыток. Вход заблокирован.");
-                                this.controls.loginButton.prop('disabled', true);
-                            }
-                        }, this)
-                    );
-                } else {
-                    this.writeln("Превышено максимальное количество попыток. Вход заблокирован.");
-                }
+                plugin.login();
             } catch (error) {
-                this.writeln(error.toString() + "Осталось попыток: " + remainingAttempts);
+                this.writeln(error.toString());
             }
         }, this));
 
