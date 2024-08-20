@@ -7,7 +7,7 @@ function testUi(useConsole) {
 
     var header = '<div class="group_header ui-widget-header ui-corner-all"></div>';
     //var codeBlock = '<div id="code"><button id="code-button" class="example button test-element">Показать код</button>' + '<div id="code-view"><pre class="brush: js"></pre></div></div>';
-    var runButton = '<button id="test-run" class="execute button test-element">Запустить тест</button>';
+    var runButton = '<button id="test-run" class="execute button test-element">Запустить</button>';
 
     $(".group").each(function (index) {
         if (!TestSuite[$(this).attr("id")]) return;
@@ -465,9 +465,35 @@ testUi.prototype = {
             }
         }, this));
 
+        var maxLoginAttempts = 3; // Максимальное количество попыток
+        var loginAttempts = 0; // Текущее количество попыток
+        
         this.controls.loginButton.click($.proxy(function () {
             try {
-                plugin.login();
+                if (loginAttempts < maxLoginAttempts) {
+                    loginAttempts++;
+                    var remainingAttempts = maxLoginAttempts - loginAttempts;
+                    
+                    plugin.login().then(
+                        $.proxy(function() {
+                            // Успешный вход
+                            loginAttempts = 0; // Сбрасываем счетчик при успешном входе
+                            this.writeln("Вход выполнен успешно");
+                        }, this),
+                        $.proxy(function(error) {
+                            // Ошибка входа
+                            this.writeln(error.toString());
+                            this.writeln("Осталось попыток: " + remainingAttempts);
+                            
+                            if (remainingAttempts === 0) {
+                                this.writeln("Превышено максимальное количество попыток. Вход заблокирован.");
+                                this.controls.loginButton.prop('disabled', true);
+                            }
+                        }, this)
+                    );
+                } else {
+                    this.writeln("Превышено максимальное количество попыток. Вход заблокирован.");
+                }
             } catch (error) {
                 this.writeln(error.toString());
             }
