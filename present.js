@@ -472,31 +472,21 @@ testUi.prototype = {
 
         this.controls.loginButton.click($.proxy(function () {
             try {
+                plugin.login();
+                logined = true;
+            } catch (error) {
                 if (loginAttempts < maxLoginAttempts & logined === false) {
                     loginAttempts++;
                     var remainingAttempts = maxLoginAttempts - loginAttempts;
-                    
-                    plugin.login().then(
-                        $.proxy(function() {
-                            // Успешный вход
-                            loginAttempts = 0; // Сбрасываем счетчик при успешном входе
-                            this.writeln("Вход выполнен успешно");
-                            logined = true;
-                        }, this),
-                        $.proxy(function(error) {
-                            // Ошибка входа
-                            
-                            this.writeln("Осталось попыток: " + remainingAttempts);
-                            
-                            if (remainingAttempts === 0 & logined === false) {
-                                this.writeln("Превышено максимальное количество попыток. Вход заблокирован.");
-                                
-                            }
-                        }, this)
-                    );
-                } 
-            } catch (error) {
-                this.writeln(error.toString());
+                    this.writeln("Осталось попыток: " + remainingAttempts);
+                    this.writeln(error.toString());
+
+                    if (remainingAttempts === 0 & logined === false) {
+                        this.writeln("Превышено максимальное количество попыток. Вход заблокирован.");
+                        this.controls.loginButton.prop('disabled', true);
+                    }
+
+                }
             }
         }, this));
 
