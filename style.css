@@ -41,6 +41,11 @@ body, html {
     margin-bottom: 10px;
 }
 
+
+#section-5, #section-6 {
+    display: none;
+}
+
 input[type="text"],
 input[type="password"],
 select {
